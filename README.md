@@ -1,2 +1,2 @@
-# DS_Algo
-Basic/Advance Data Structures and Algorithms implementation.
+# Ds_Algo
+Solutions of various questions related to competitive programming.
