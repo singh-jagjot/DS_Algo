@@ -1,7 +1,7 @@
 from time import sleep
 from typing import List
 
-# Iterative Solution O(n) time | O(n) space
+# Iterative Solution O(n) time | O(n) space [This solution is not tested]
 def productSum1(arr: str) -> int:
     stack = []
     depth = 0
