@@ -1,4 +1,4 @@
-def isSubsequence(s: str, t: str) -> bool:
+def is_subsequence(s: str, t: str) -> bool:
     s_index = t_index = 0
     while s_index < len(s) and t_index < len(t):
         if s[s_index] == t[t_index]:

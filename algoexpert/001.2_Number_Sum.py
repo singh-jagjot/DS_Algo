@@ -1,7 +1,7 @@
 from typing import List
 
 
-def twoSum(nums: List[int], target: int) -> List[int]:
+def two_sum(nums: List[int], target: int) -> List[int]:
     d = {}
 
     for i, x in enumerate(nums):
@@ -13,7 +13,6 @@ def twoSum(nums: List[int], target: int) -> List[int]:
 
     for i, x in enumerate(nums):
         k = target - x
-        temp = d[x]
         if d[x][1] == 1:
             d.pop(x)
         else:

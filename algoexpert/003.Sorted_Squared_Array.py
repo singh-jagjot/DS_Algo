@@ -1,7 +1,7 @@
 from typing import List
 
 
-def sortedSquares(nums: List[int]) -> List[int]:
+def sorted_squares(nums: List[int]) -> List[int]:
     parr = []  # Sorted in Ascending
     narr = []  # Sorted in Descending
     sarr = []
@@ -40,19 +40,19 @@ def sortedSquares(nums: List[int]) -> List[int]:
 # Better solution with same time complexity but with less code
 
 
-def sortedSquareArray(nums: List[int]) -> List[int]:
+def sorted_square_array(nums: List[int]) -> List[int]:
     sarr = [0 for _ in nums]
-    smallerValueIdx = 0
-    largerValueIdx = len(nums) - 1
+    smaller_value_idx = 0
+    larger_value_idx = len(nums) - 1
 
     for idx in reversed(range(len(nums))):
-        smallerValue = nums[smallerValueIdx]
-        largerValue = nums[largerValueIdx]
+        smaller_value = nums[smaller_value_idx]
+        larger_value = nums[larger_value_idx]
 
-        if abs(smallerValue) > abs(largerValue):
-            sarr[idx] = smallerValue * smallerValue
-            smallerValueIdx += 1
+        if abs(smaller_value) > abs(larger_value):
+            sarr[idx] = smaller_value * smaller_value
+            smaller_value_idx += 1
         else:
-            sarr[idx] = largerValue * largerValue
-            largerValueIdx -= 1
+            sarr[idx] = larger_value * larger_value
+            larger_value_idx -= 1
     return sarr
