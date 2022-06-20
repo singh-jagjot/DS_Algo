@@ -1,16 +1,16 @@
 from typing import List
 
 
-def generateDocument(characters: List, document: List) -> bool:
-    charMap = {}
+def generate_document(characters: List, document: List) -> bool:
+    char_map = {}
 
     for ch in characters:
-        if ch not in charMap:
-            charMap[ch] = 0
-        charMap[ch] += 1
+        if ch not in char_map:
+            char_map[ch] = 0
+        char_map[ch] += 1
 
     for ch in document:
-        if ch not in charMap or charMap[ch] == 0:
+        if ch not in char_map or char_map[ch] == 0:
             return False
-        charMap[ch] -= 1
+        char_map[ch] -= 1
     return True

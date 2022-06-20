@@ -1,27 +1,31 @@
 from typing import List
 
 
-def minWaitTime(inp: List):
+def min_wait_time(inp: List):
     inp.sort()
-    waitTime = 0
+    wait_time = 0
     total = 0
     for idx in range(len(inp)):
         if idx == 0:
             continue
-        waitTime = waitTime + inp[idx - 1]
-        total += waitTime
+        wait_time += inp[idx - 1]
+        total += wait_time
 
     return total
+
 
 # Better solution with less code.
 
 
-def minWaitTime2(queries: List) -> int:
+def min_wait_time2(queries: List) -> int:
     queries.sort()
-    totalWaitingTime = 0
+    total_waiting_time = 0
     for idx, query in enumerate(queries):
-        queriesRemain = len(queries) - (idx + 1)
-        totalWaitingTime += query*queriesRemain
+        queries_remain = len(queries) - (idx + 1)
+        total_waiting_time += query * queries_remain
 
-    return totalWaitingTime
+    return total_waiting_time
 
+
+print(min_wait_time([2, 3, 1, 5, 6]))
+print(min_wait_time2([2, 3, 1, 5, 6]))

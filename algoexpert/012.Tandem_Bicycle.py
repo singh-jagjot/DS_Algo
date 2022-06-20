@@ -1,7 +1,7 @@
 from typing import List
 
 
-def tendemBicycle(red: List, blue: List, fastest: bool) -> int:
+def tandem_bicycle(red: List, blue: List, fastest: bool) -> int:
     red.sort()
     if fastest:
         blue.sort(reverse=True)

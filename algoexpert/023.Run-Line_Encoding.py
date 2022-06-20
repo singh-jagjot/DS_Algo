@@ -1,4 +1,4 @@
-def runLineEncoding(s: str) -> str:
+def run_line_encoding(s: str) -> str:
     head = 1
     rle = []
     for i in range(1, len(s)):
@@ -12,4 +12,4 @@ def runLineEncoding(s: str) -> str:
     return ''.join(rle)
 
 
-print(runLineEncoding('AAAAAAAAAAAAABBCCCCDD'))
+print(run_line_encoding('AAAAAAAAAAAAABBCCCCDD'))

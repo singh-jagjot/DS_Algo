@@ -3,16 +3,19 @@ class Node:
         self.value = value
         self.next = None
 
-def removeDuplicates(head: Node) -> Node:
-    nextNode:Node = None
-    currentNode = head
-    if currentNode is None: return head
+
+def remove_duplicates(head: Node) -> Node:
+    next_node = None
+    current_node = head
+    if current_node is None:
+        return head
     while True:
-        nextNode = currentNode.next
-        if nextNode is None: break
-        if currentNode.value == nextNode.value:
-            currentNode.next = nextNode.next
+        next_node = current_node.next
+        if next_node is None:
+            break
+        if current_node.value == next_node.value:
+            current_node.next = next_node.next
         else:
-            currentNode = nextNode
+            current_node = next_node
 
     return head

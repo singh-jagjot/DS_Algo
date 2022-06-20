@@ -1,19 +1,19 @@
 from typing import List
 
 
-def tournament_winner(competetions:List[List], results:List):
-    curBestTeam = ""
-    scores = {curBestTeam: 0}
-    for idx, competetion in enumerate(competetions):
+def tournament_winner(competitions: List[List], results: List):
+    cur_best_team = ""
+    scores = {cur_best_team: 0}
+    for idx, competition in enumerate(competitions):
         result = results[idx]
-        homeTeam, awayteam = competetion
-        winningTeam = homeTeam if result == 1 else awayteam
-        
-        if winningTeam not in scores:
-            scores[winningTeam] = 0
-        scores[winningTeam] += 3
-        
-        if scores[winningTeam] > scores[curBestTeam]:
-            curBestTeam = winningTeam
-    
-    return curBestTeam
+        home_team, away_team = competition
+        winning_team = home_team if result == 1 else away_team
+
+        if winning_team not in scores:
+            scores[winning_team] = 0
+        scores[winning_team] += 3
+
+        if scores[winning_team] > scores[cur_best_team]:
+            cur_best_team = winning_team
+
+    return cur_best_team

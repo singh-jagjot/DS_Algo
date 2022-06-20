@@ -1,12 +1,12 @@
 from typing import List
 
 
-def nonConstructibleChange(coins: List):
+def non_constructible_change(coins: List):
     coins.sort()
-    currentChange = 0
+    current_change = 0
     for coin in coins:
-        if coin > currentChange + 1:
-            return currentChange + 1
-        currentChange += coin
+        if coin > current_change + 1:
+            return current_change + 1
+        current_change += coin
 
-    return currentChange + 1
+    return current_change + 1

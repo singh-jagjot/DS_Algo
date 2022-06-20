@@ -6,12 +6,12 @@ class Node:
         self.children = []
         self.value = value
     
-    def addChild(self, value):
+    def add_child(self, value):
         self.children.append(Node(value))
     
     # O(v + e) time | O(v) space
-    def depthFirstSearch(self, array: List) -> List:
+    def dfs(self, array: List) -> List:
         array.append(self.value)
         for child in self.children:
-            child.depthFirstSearch(array)
+            child.dfs(array)
         return array

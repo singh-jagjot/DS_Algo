@@ -1,16 +1,17 @@
 from typing import List
 
 
-def classPhotos(redShirtsHeight: List, blueShirtsHeight: List) -> bool:
-    redShirtsHeight.sort(reverse=True)
-    blueShirtsHeight.sort(reverse=True)
+def class_photos(red_shirts_height: List, blue_shirts_height: List) -> bool:
+    red_shirts_height.sort(reverse=True)
+    blue_shirts_height.sort(reverse=True)
 
-    firstRowColor = 'RED' if redShirtsHeight[0] < blueShirtsHeight[0] else 'BLUE'
+    first_row_color = 'RED' if red_shirts_height[0] < blue_shirts_height[0] else 'BLUE'
 
-    for idx in range(len(redShirtsHeight)):
-        if firstRowColor == 'RED':
-            if redShirtsHeight[idx] >= blueShirtsHeight[idx]: return False
+    for idx in range(len(red_shirts_height)):
+        if first_row_color == 'RED':
+            if red_shirts_height[idx] >= blue_shirts_height[idx]:
+                return False
         else:
-            if blueShirtsHeight[idx] >= redShirtsHeight[idx]: return False
+            if blue_shirts_height[idx] >= red_shirts_height[idx]:
+                return False
     return True
-

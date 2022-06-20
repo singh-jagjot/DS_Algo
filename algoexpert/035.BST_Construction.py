@@ -4,78 +4,77 @@ from typing import Any
 class BST:
     def __init__(self, value) -> None:
         self.value: Any = value
-        self.left: BST = None
-        self.right: BST = None
+        self.left = None
+        self.right = None
 
     def insert(self, value):
-        currentNode = self
+        current_node = self
         while True:
-            if value < currentNode.value:
-                if currentNode.left is None:
-                    currentNode.left = BST(value)
+            if value < current_node.value:
+                if current_node.left is None:
+                    current_node.left = BST(value)
                     break
                 else:
-                    currentNode = currentNode.left
+                    current_node = current_node.left
             else:
-                if currentNode.right is None:
-                    currentNode.right = BST(value)
+                if current_node.right is None:
+                    current_node.right = BST(value)
                     break
                 else:
-                    currentNode = currentNode.right
+                    current_node = current_node.right
 
         return self
 
     def contains(self, value):
-        currentNode = self
-        while currentNode is not None:
-            if value < currentNode.value:
-                currentNode = currentNode.left
-            elif value > currentNode.value:
-                currentNode = currentNode.right
+        current_node = self
+        while current_node is not None:
+            if value < current_node.value:
+                current_node = current_node.left
+            elif value > current_node.value:
+                current_node = current_node.right
             else:
                 return True
         return False
 
-    def getMinValue(self):
-        currentNode = self
-        while currentNode.left is not None:
-            currentNode = currentNode.left
-        return currentNode.value
+    def get_min_value(self):
+        current_node = self
+        while current_node.left is not None:
+            current_node = current_node.left
+        return current_node.value
 
-
-# Here we added 'parent' parameter to remove the currentNode if it donesn't have either of left or right child.
+    # Here we added 'parent' parameter to remove the currentNode if it doesn't have either of left or right child.
 
     def remove(self, value, parent=None):
-        currentNode = self
-        while currentNode is not None:
-            if value < currentNode.value:
-                parent = currentNode
-                currentNode = currentNode.left
-            elif value > currentNode.value:
-                parent = currentNode
-                currentNode = currentNode.right
+        current_node = self
+        while current_node is not None:
+            if value < current_node.value:
+                parent = current_node
+                current_node = current_node.left
+            elif value > current_node.value:
+                parent = current_node
+                current_node = current_node.right
             else:
-                if currentNode.left is not None and currentNode.right is not None:
-                    currentNode.value = currentNode.right.getMinValue()
-                    currentNode.right.remove(currentNode.value, currentNode)
+                if current_node.left is not None and current_node.right is not None:
+                    current_node.value = current_node.right.get_min_value()
+                    current_node.right.remove(current_node.value, current_node)
                 # This case is for a root node where it doesn't have either of left or right child.
                 elif parent is None:
-                    # Here value of currentNode.left and currentNode.right is not 'None' because not
-                    # 'None' child of root node can have further children.
-                    if currentNode.left is not None:
-                        #Beaware of the order here or we can get null pointer exception
-                        currentNode.value = currentNode.left.value
-                        currentNode.right = currentNode.left.right
-                        currentNode.left = currentNode.left.left
-                    elif currentNode.right is not None:
-                        currentNode.value = currentNode.right.value
-                        currentNode.left = currentNode.right.left
-                        currentNode.right = currentNode.right.right
+                    # Here value of current_node.left and current_node.right is not 'None' because not
+                    # either child of root node can have further children.
+                    if current_node.left is not None:
+                        # Beware of the order here or else we can get null pointer exception
+                        current_node.value = current_node.left.value
+                        current_node.right = current_node.left.right
+                        current_node.left = current_node.left.left
+                    elif current_node.right is not None:
+                        current_node.value = current_node.right.value
+                        current_node.left = current_node.right.left
+                        current_node.right = current_node.right.right
                     else:
-                        currentNode.value = None
-                elif parent.left == currentNode:
-                    parent.left = currentNode.left if currentNode.right is None else currentNode.right
-                elif parent.right is currentNode:
-                    parent.right = currentNode.left if currentNode.right is None else currentNode.right
+                        current_node.value = None
+                elif parent.left == current_node:
+                    parent.left = current_node.left if current_node.right is None else current_node.right
+                elif parent.right is current_node:
+                    parent.right = current_node.left if current_node.right is None else current_node.right
                 break
         return self

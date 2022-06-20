@@ -4,17 +4,17 @@ from typing import List
 class Node:
     def __init__(self, value: int = 0) -> None:
         self.value = value
-        self.left: Node = None
-        self.right: Node = None
+        self.left = None
+        self.right = None
 
 
-def branchSums(tree, sums: List, sum=0):
+def branch_sums(tree, sums: List, total=0):
     if tree is None:
         return sums
     if tree.left is None and tree.right is None:
-        sum += tree.value
-        sums.append(sum)
+        total += tree.value
+        sums.append(total)
         return sums
-    branchSums(tree.left, sums, sum+tree.value)
-    branchSums(tree.right, sums, sum+tree.value)
+    branch_sums(tree.left, sums, total + tree.value)
+    branch_sums(tree.right, sums, total + tree.value)
     return sums
