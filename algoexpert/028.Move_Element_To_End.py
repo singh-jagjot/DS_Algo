@@ -1,7 +1,7 @@
 from typing import List
 
 
-# Better solution as here order of the elements(other) elements is preserved.
+# Better solution as here order of the elements(other) is preserved.
 def mete(nums: List, val):
     val_idx = -1
     for idx, num in enumerate(nums):
