@@ -22,7 +22,7 @@ def klargest(root: Tree_Node, k: int) -> int:
 
 
 def klargest2(root: Tree_Node, k: int) -> int:
-    # Recursive solution O(N) time | O(N) space
+    # Recursive solution O(h + k) time | O(h+k) space
     arr = []
 
     def reverseInorder(root):
