@@ -1,16 +1,16 @@
 from typing import List
 
 
-def three_sum(nums: List[int]) -> List[List[int]]:
+def three_sum(nums: List[int], target: int) -> List[List[int]]:
     nums.sort()
     ans = []
     for i in range(len(nums) - 2):
         left, right = i + 1, len(nums) - 1
         while left < right:
             sum = nums[i] + nums[left] + nums[right]
-            if sum > 0:
+            if sum > target:
                 right -= 1
-            elif sum < 0:
+            elif sum < target:
                 left += 1
             else:
                 ans.append([nums[left], nums[i], nums[right]])
