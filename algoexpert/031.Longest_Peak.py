@@ -21,3 +21,8 @@ def longest_peak(array: List):
 
 
 print(longest_peak([1, 2, 3, 3, 4, 0, 10, 6, 5, -1, -3, 2, 3]))
+
+# This one is kinda missleading as here is asked to find the longest peak for which we have
+# to traverse the whole array.
+# To find whether a peak exists or not there exists more efficient O(logN) algorithm using
+# binary search. See answer 162 in leetcode for more details.
