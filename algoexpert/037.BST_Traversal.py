@@ -38,3 +38,6 @@ def postorderTraversal(root) -> List[int]:
         lst.append(root.val)
     helper(root, lst)
     return lst
+
+
+# Better algorithm exits 'Morris in-order traversal' for tree traversal without recursion and stack(iterative)
