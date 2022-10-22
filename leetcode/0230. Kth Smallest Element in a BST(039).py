@@ -16,3 +16,19 @@ class Solution:
         
         helper(root)
         return arr[k - 1]
+
+
+# Best Solution(Iterative)
+class Solution:
+    def kthSmallest(self, root, k):
+        stack = []
+        while True:
+            while root:
+                stack.append(root)
+                root = root.left
+            root = stack.pop()
+            k -= 1
+            if not k:
+                return root.val
+            root = root.right
+
