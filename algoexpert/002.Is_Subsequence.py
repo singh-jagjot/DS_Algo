@@ -1,7 +1,10 @@
-def is_subsequence(s: str, t: str) -> bool:
-    s_index = t_index = 0
-    while s_index < len(s) and t_index < len(t):
-        if s[s_index] == t[t_index]:
-            s_index += 1
-        t_index += 1
-    return s_index == len(s)
+def isValidSubsequence(array, sequence):
+    # Write your code here.
+    ai = si = 0
+
+    while ai < len(array)  and si < len(sequence):
+        if sequence[si] == array[ai]:
+            si +=1
+        ai +=1
+
+    return si == len(sequence)
