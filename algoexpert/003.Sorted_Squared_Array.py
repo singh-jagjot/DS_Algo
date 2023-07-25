@@ -1,40 +1,40 @@
 from typing import List
 
 
-def sorted_squares(nums: List[int]) -> List[int]:
-    parr = []  # Sorted in Ascending
-    narr = []  # Sorted in Descending
-    sarr = []
-    for x in nums:
-        if x >= 0:
-            parr.append(x*x)
+def sortedSquaredArray(array):
+    # Write your code here.
+    pivot = 0
+
+    for val in array:
+        if val < 0:
+            pivot +=1
+
+    left = pivot - 1
+    right = pivot
+
+    ans = []
+
+    while left >= 0 and right < len(array) :
+        val1 = array[left]**2
+        val2 = array[right]**2
+
+        if  val1 > val2:
+            ans.append(val2)
+            right +=1
         else:
-            narr.append(x*x)
+            ans.append(val1)
+            left -=1
 
-    if len(narr) == 0:
-        return parr
-    if len(parr) == 0:
-        return narr[::-1]
+    if left < 0:
+        while right < len(array):
+            ans.append(array[right] **2)
+            right +=1
+    else:
+        while left >= 0:
+            ans.append(array[left] **2)
+            left -=1
+    return ans
 
-    pidx = 0
-    nidx = len(narr) - 1
-
-    while pidx < len(parr) and nidx > -1:
-        if parr[pidx] < narr[nidx]:
-            sarr.append(parr[pidx])
-            pidx += 1
-        else:
-            sarr.append(narr[nidx])
-            nidx -= 1
-
-    while pidx < len(parr):
-        sarr.append(parr[pidx])
-        pidx += 1
-    while nidx > -1:
-        sarr.append(narr[nidx])
-        nidx -= 1
-
-    return sarr
 
 
 # Better solution with same time complexity but with less code
