@@ -1,23 +1,26 @@
-from typing import List
+def twoNumberSum(array, targetSum):
+    # Write your code here.
+    s = {val for val in array}
+    
+    for val in array:
+        if targetSum - val in s and val != targetSum - val:
+            return [val, targetSum - val]
+    return []
+        
 
-
-def two_sum(nums: List[int], target: int) -> List[int]:
-    d = {}
-
-    for i, x in enumerate(nums):
-        if x not in d:
-            d[x] = [[i], 1]
+def twoNumberSum(array, targetSum):
+    array.sort()
+    left = 0
+    right = len(array) - 1
+    while left < right:
+        val1 = array[left]
+        val2 = array[right]
+        sum = val1 + val2
+        if sum == targetSum:
+            return [val1, val2]
+        elif sum < targetSum:
+            left += 1
         else:
-            d[x][0].append(i)
-            d[x][1] += 1
+            right -= 1
 
-    for i, x in enumerate(nums):
-        k = target - x
-        if d[x][1] == 1:
-            d.pop(x)
-        else:
-            d[x][0].remove(i)
-            d[x][1] -= 1
-
-        if k in d:
-            return [i, d[k][0][0]]
+    return []
