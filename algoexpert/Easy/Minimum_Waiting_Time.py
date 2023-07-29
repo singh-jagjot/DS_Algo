@@ -1,17 +1,15 @@
 from typing import List
 
 
-def min_wait_time(inp: List):
-    inp.sort()
-    wait_time = 0
-    total = 0
-    for idx in range(len(inp)):
-        if idx == 0:
-            continue
-        wait_time += inp[idx - 1]
-        total += wait_time
-
-    return total
+def minimumWaitingTime(queries):
+    # Write your code here.
+    queries.sort()
+    time = 0
+    tottime = 0
+    for i in range(1, len(queries)):
+        time += queries[i - 1]
+        tottime += time
+    return tottime
 
 
 # Better solution with less code.
