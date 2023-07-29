@@ -1,6 +1,6 @@
 from typing import List
 
-
+# O(n) time | O(k) (k is number of teams)
 def tournament_winner(competitions: List[List], results: List):
     cur_best_team = ""
     scores = {cur_best_team: 0}

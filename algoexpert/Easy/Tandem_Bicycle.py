@@ -1,3 +1,4 @@
+# O(nlog(n)) time | O(1) space
 def tandemBicycle(redShirtSpeeds, blueShirtSpeeds, fastest):
     # Write your code here.
     redShirtSpeeds.sort()

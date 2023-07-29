@@ -1,3 +1,4 @@
+# O(n) time | O(1) space
 def isPalindrome(string):
     # Write your code here.
     li = 0

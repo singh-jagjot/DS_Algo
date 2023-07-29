@@ -1,5 +1,5 @@
 # Recursive
-
+# O(n) time | O(h) space (h is height of the tree)
 def nodeDepths(root):
     return helper(root, 0)
     
@@ -18,7 +18,7 @@ class BinaryTree:
 
 
 # Iterative
-
+# O(n) time | O(h) space (h is height of the tree)
 def node_depth2(root) -> int:
     node_stack = [{"node": root, "depth": 0}]
     depth_sum = 0

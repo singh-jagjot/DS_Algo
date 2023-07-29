@@ -7,7 +7,8 @@ class BST:
         self.value = value
         self.left = None
         self.right = None
-
+    
+    # O(n) time (O(log(n) on average) | O(1) space
     def insert(self, value):
         # Write your code here.
         # Do not edit the return statement of this method.
@@ -27,7 +28,8 @@ class BST:
                     current_node = current_node.right
 
         return self
-
+    
+    # O(n) time (O(log(n) on average) | O(1) space
     def contains(self, value):
         # Write your code here.
         current_node = self
@@ -40,13 +42,7 @@ class BST:
                 return True
         return False
 
-    def get_min_value(self):
-        current_node = self
-        while current_node.left is not None:
-            current_node = current_node.left
-        return current_node.value
-
-    
+    # O(n) time (O(log(n) on average) | O(1) space
     def remove(self, value, parent = None):
         # Write your code here.
         # Do not edit the return statement of this method.
@@ -87,3 +83,9 @@ class BST:
                 break
 
         return self
+
+    def get_min_value(self):
+        current_node = self
+        while current_node.left is not None:
+            current_node = current_node.left
+        return current_node.value

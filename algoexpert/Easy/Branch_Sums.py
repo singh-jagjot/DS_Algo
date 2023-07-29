@@ -5,7 +5,7 @@ class BinaryTree:
         self.left = None
         self.right = None
 
-
+# O(n) time | O(n) space
 def branchSums(root):
     # Write your code here.
     lst = []

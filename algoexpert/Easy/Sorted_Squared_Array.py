@@ -1,6 +1,6 @@
 from typing import List
 
-
+# O(n) time | O(n) space
 def sortedSquaredArray(array):
     # Write your code here.
     pivot = 0

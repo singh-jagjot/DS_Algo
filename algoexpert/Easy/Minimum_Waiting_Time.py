@@ -1,6 +1,6 @@
 from typing import List
 
-
+# O(nlog(n)) time | O(1) space
 def minimumWaitingTime(queries):
     # Write your code here.
     queries.sort()
@@ -12,9 +12,8 @@ def minimumWaitingTime(queries):
     return tottime
 
 
-# Better solution with less code.
-
-
+# Better solution with good logic.
+# O(nlog(n)) time | O(1) space
 def min_wait_time2(queries: List) -> int:
     queries.sort()
     total_waiting_time = 0
@@ -25,5 +24,5 @@ def min_wait_time2(queries: List) -> int:
     return total_waiting_time
 
 
-print(min_wait_time([2, 3, 1, 5, 6]))
+print(minimumWaitingTime([2, 3, 1, 5, 6]))
 print(min_wait_time2([2, 3, 1, 5, 6]))

@@ -1,3 +1,4 @@
+# O(rows * columns) time | O(rows * columns) space
 def transposeMatrix(matrix):
     # Write your code here.
     rows = len(matrix)

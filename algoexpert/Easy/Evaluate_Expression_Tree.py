@@ -5,7 +5,7 @@ class BinaryTree:
         self.left = left
         self.right = right
 
-
+# O(n) time | O(h) space (h is height of the tree)
 def evaluateExpressionTree(tree):
     # Write your code here.
     return helper(tree)

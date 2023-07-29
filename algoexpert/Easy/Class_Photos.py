@@ -1,3 +1,4 @@
+# O(nlog(n)) time | O(1) space
 def classPhotos(redShirtHeights, blueShirtHeights):
     # Write your code here.
     redShirtHeights.sort()

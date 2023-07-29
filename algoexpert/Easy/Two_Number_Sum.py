@@ -1,3 +1,4 @@
+# O(n) time | O(n) Space
 def twoNumberSum(array, targetSum):
     # Write your code here.
     s = {val for val in array}
@@ -7,7 +8,7 @@ def twoNumberSum(array, targetSum):
             return [val, targetSum - val]
     return []
         
-
+# O(nlog(n)) time | O(1) Space
 def twoNumberSum(array, targetSum):
     array.sort()
     left = 0
