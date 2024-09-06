@@ -9,7 +9,7 @@ class Solution {
         int replacement = 0;
         for (int i = 0; i < nums1.length; i++) {
             int origAbs = Math.abs(nums1[i] - nums2[i]);
-            int potentialRep = getLowerBoundIdx(clone, nums2[i]);
+            int potentialRep = getLowerBound(clone, nums2[i]);
             int newAbs = Math.abs(potentialRep - nums2[i]);
             int diff = origAbs - newAbs;
             if (maxDiff < diff) {
@@ -31,7 +31,7 @@ class Solution {
         return ads;
     }
 
-    public int getLowerBoundIdx(int[] arr, int key) {
+    public int getLowerBound(int[] arr, int key) {
         int left = 0;
         int right = arr.length - 1;
         int mid;
