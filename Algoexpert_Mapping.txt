@@ -1,1 +1,5 @@
 Three Number Sum -> 3Sum (leetcode)
+Move Element To End -> Move Zeros (leetcode)
+Monotonic Array -> Monotonic Array (leetcode)
+Longest Peak -> Find Peak Element (leetcode) [Mostly Different]
+
