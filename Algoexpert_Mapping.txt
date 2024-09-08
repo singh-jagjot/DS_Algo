@@ -3,3 +3,5 @@ Move Element To End -> 0283. Move Zeros (leetcode)
 Monotonic Array -> 0896. Monotonic Array (leetcode)
 Longest Peak -> 0162. Find Peak Element (leetcode) [Mostly Different]
 Array Of Products -> 0238. Product of Array Except Self (leetcode)
+Merge Overlapping Intervals -> 0056. Merge Intervals (leetcode)
+
