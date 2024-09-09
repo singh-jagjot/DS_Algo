@@ -11,7 +11,10 @@ BST
 BST Construction -> 0700. Search in a Binary Search Tree
 BST Construction -> 0701. Insert into a Binary Search Tree
 BST Construction -> 0450. Delete Node in a BST
-
+Validate BST -> 0098. Validate Binary Search Tree
+BST Traversal -> 0144. Binary Tree Preorder Traversal
+BST Traversal -> 
+BST Traversal -> 
 
 
 
