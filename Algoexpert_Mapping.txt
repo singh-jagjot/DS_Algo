@@ -15,6 +15,7 @@ Validate BST -> 0098. Validate Binary Search Tree
 BST Traversal -> 0144. Binary Tree Preorder Traversal
 BST Traversal -> 0145. Binary Tree Postorder Traversal
 BST Traversal -> 0094. Binary Tree Inorder Traversal
+Min hight BST -> 0108. Convert Sorted Array to Binary Search Tree
 
 
 
