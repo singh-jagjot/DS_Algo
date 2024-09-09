@@ -10,7 +10,8 @@ Majority Element -> 0169. Majority Element
 BST
 BST Construction -> 0700. Search in a Binary Search Tree
 BST Construction -> 0701. Insert into a Binary Search Tree
-BST Construction -> 
+BST Construction -> 0450. Delete Node in a BST
+
 
 
 
