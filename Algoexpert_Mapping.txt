@@ -5,5 +5,7 @@ Longest Peak -> 0162. Find Peak Element (leetcode) [Mostly Different]
 Array Of Products -> 0238. Product of Array Except Self (leetcode)
 Merge Overlapping Intervals -> 0056. Merge Intervals (leetcode)
 Zero Sum Subarray -> 0560. Subarray Sum Equals K
+Majority Element -> 0169. Majority Element
+
 
 

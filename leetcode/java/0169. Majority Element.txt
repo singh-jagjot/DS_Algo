@@ -1,3 +1,4 @@
+//Boyer-Moore Majority Vote Algorithm
 class Solution {
     public int majorityElement(int[] nums) {
         int currMe = nums[0];
