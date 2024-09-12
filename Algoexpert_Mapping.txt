@@ -20,6 +20,9 @@ Find Kth Largest Value in BST -> 0230. Kth Smallest Element in a BST
 Reconstruct BST -> 1008. Construct Binary Search Tree from Preorder Traversal
 Invert Binary Tree -> 0226. Invert Binary Tree
 Binary Tree Diameter -> 543. Diameter of Binary Tree
+Find Successor -> 285 inorder successor in bst (paid)
+Height Balanced Binary Tree -> 0110. Balanced Binary Tree
+
 
 
 
