@@ -23,6 +23,7 @@ Binary Tree Diameter -> 543. Diameter of Binary Tree
 Find Successor -> 285 inorder successor in bst (paid)
 Height Balanced Binary Tree -> 0110. Balanced Binary Tree
 Merge Binary Trees -> 0617. Merge Two Binary Trees
+Symmetrical Tree -> 101. Symmetric Tree
 
 
 
