@@ -29,6 +29,9 @@ Max Subset Sum No Adjacent -> 0198. House Robber
 Number Of Ways To Make Change -> 518. Coin Change II
 Min Number Of Coins For Change -> 322. Coin Change
 Levenshtein Distance -> 72. Edit Distance
+Number Of Ways To Traverse Graph -> 62. Unique Paths
+Kadane's Algorithm -> 53. Maximum Subarray
+
 
 
 
