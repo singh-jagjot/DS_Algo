@@ -1,3 +1,5 @@
+ETF == "Easy To Forget"
+
 Three Number Sum -> 0015. 3Sum (leetcode)
 Move Element To End -> 0283. Move Zeros (leetcode)
 Monotonic Array -> 0896. Monotonic Array (leetcode)
@@ -6,7 +8,7 @@ Array Of Products -> 0238. Product of Array Except Self (leetcode)
 Merge Overlapping Intervals -> 0056. Merge Intervals (leetcode)
 Zero Sum Subarray -> 0560. Subarray Sum Equals K
 Majority Element -> 0169. Majority Element
-
+Missing Numbers[ETF] ->
 
 BST Construction -> 0700. Search in a Binary Search Tree
 BST Construction -> 0701. Insert into a Binary Search Tree
