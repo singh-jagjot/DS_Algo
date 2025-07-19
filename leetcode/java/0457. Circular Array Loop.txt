@@ -1,12 +1,13 @@
 class Solution {
     public boolean circularArrayLoop(int[] nums) {
         for (int i = 0; i < nums.length; i++) {
-            // already visited or 0 can't move
+            // Already visited or 0 can't move
             if (nums[i] == 0) continue;
 
             boolean isForward = nums[i] > 0;
             int slow = i, fast = i;
 
+            // Floyd’s Cycle Detection
             while (true) {
                 slow = getNextIdx(nums, isForward, slow);
                 fast = getNextIdx(nums, isForward, fast);
@@ -19,8 +20,8 @@ class Solution {
             int curr = i;
             while (true) {
                 int next = getNextIdx(nums, isForward, curr);
-                nums[curr] = 0;
                 if (next == -1) break;
+                nums[curr] = 0;
                 curr = next;
             }
         }
@@ -28,10 +29,11 @@ class Solution {
     }
 
     private int getNextIdx(int[] nums, boolean isForward, int currIdx) {
-        boolean direction = nums[currIdx] >= 0;
+        boolean direction = nums[currIdx] > 0;
         if (direction != isForward) return -1;
 
         int n = nums.length;
+        // Handles -ve cases as well
         int nextIdx = ((currIdx + nums[currIdx]) % n + n) % n;
         if (nextIdx == currIdx) return -1; // self-loop
         return nextIdx;
