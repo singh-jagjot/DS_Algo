@@ -1,0 +1,39 @@
+class Solution {
+    public int numIslands(char[][] grid) {
+        int totalIslands = 0;
+        for (int i = 0; i < grid.length; i++) {
+            for (int j = 0; j < grid[i].length; j++) {
+                if (grid[i][j] == '1') {
+                    dfs(grid, i, j);
+                    totalIslands++;
+                }
+            }
+        }
+        return totalIslands;
+    }
+
+    int[] dr = new int[]{0, 0, -1, 1};
+    int[] dc = new int[]{-1, 1, 0, 0};
+
+    void dfs(char[][] grid, int r, int c) {
+        int m = grid.length;
+        int n = grid[0].length;
+
+        Deque<int[]> stack = new ArrayDeque<>();
+        stack.push(new int[]{r, c});
+
+        while (!stack.isEmpty()) {
+            int[] node = stack.pop();
+            int cr = node[0]; int cc = node[1];
+            grid[cr][cc] = 'v';
+
+            for (int d = 0; d < 4; d++) {
+                int nr = cr + dr[d];
+                int nc = cc + dc[d];
+                if (nr >= 0 && nr < m && nc >= 0 && nc < n) {
+                    if (grid[nr][nc] == '1') stack.push(new int[]{nr, nc});
+                }
+            }
+        }
+    }
+}
