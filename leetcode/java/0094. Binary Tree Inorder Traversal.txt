@@ -13,6 +13,10 @@
  *     }
  * }
  */
+
+
+// Inorder, Postorder and Preorder traversals are types of DFS traversals.
+
 class Solution {
     public List<Integer> inorderTraversal(TreeNode root) {
         List<Integer> lst = new ArrayList<>();
