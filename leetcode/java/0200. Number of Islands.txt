@@ -36,4 +36,17 @@ class Solution {
             }
         }
     }
+
+    // For study below is recursive DFS (Above recommended)
+
+    void dfs(char[][] grid, int r, int c) {
+        if (r < 0 || r >= grid.length || c < 0 || c >= grid[0].length || grid[r][c] != '1') return;
+
+        grid[r][c] = 'v';
+
+        dfs(grid, r + 1, c);
+        dfs(grid, r - 1, c);
+        dfs(grid, r, c + 1);
+        dfs(grid, r, c - 1);
+    }
 }
