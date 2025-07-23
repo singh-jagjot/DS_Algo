@@ -1,3 +1,16 @@
+🧠 Core Insight
+When you reverse the whole array, the elements that need to go to the front (the last k elements) end up at the front,
+but in reverse order. The remaining elements are also in reverse order, so you fix that by reversing each part again.
+
+🧠 Why It Works — Conceptual Summary
+The idea is that rotating an array is just rearranging two parts:
+The last k elements → move to the front
+The first n−k elements → shift to the right
+
+So, the reverse steps simulate this partitioning and repositioning:
+Full reverse puts both parts in the opposite order
+Partial reverses correct the local order of each part
+
 class Solution {
     public void rotate(int[] nums, int k) {
         int n = nums.length;
