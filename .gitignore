@@ -29,6 +29,5 @@ HELP.md
 ### VS Code ###
 .vscode/
 
-demo.py
-0000. demo.java
+/Demo/
 .DS_Store

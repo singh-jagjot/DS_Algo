@@ -18,17 +18,17 @@ class Solution {
     TreeNode lca = null;
 
     public TreeNode lcaDeepestLeaves(TreeNode root) {
-        getLca(root, 0);
+        dfs(root, 0);
         return lca;
     }
 
-    public int getLca(TreeNode node, int depth) {
+    public int dfs(TreeNode node, int depth) {
         if (node == null) {
             if (depth > currMaxDepth) currMaxDepth = depth;
             return depth;
         }
-        int left = getLca(node.left, depth + 1);
-        int right = getLca(node.right, depth + 1);
+        int left = dfs(node.left, depth + 1);
+        int right = dfs(node.right, depth + 1);
         if (left == right && left == currMaxDepth) lca = node;
         return Math.max(left, right);
     }
