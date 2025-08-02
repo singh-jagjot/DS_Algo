@@ -12,7 +12,6 @@ class Solution {
             while (!stack.isEmpty()) {
                 int node = stack.peek();
                 if(visited[node] == 0) visited[node] = 1;
-                //    System.out.print(node + "->");
                 boolean neighboursVisited = true;
                 for(int neighbour: graph[node]){
                     if(visited[neighbour] == 0) {
@@ -32,13 +31,6 @@ class Solution {
                 }
             }
         }
-        // for (int p: partition){
-        //     System.out.print(p + ",");
-        // }
-        // System.out.println();
-        // for (int v: visited){
-        //     System.out.print(v + ",");
-        // }
         return true;
     }
 }
