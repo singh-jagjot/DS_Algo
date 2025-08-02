@@ -21,6 +21,7 @@ class Solution {
         // Start from -1 because the first level (initial rotten oranges) is "minute 0"
         // We only increment minutes *after* spreading rot, so the initial minute is counted as 0 after first pass.
 
+        // Performing BFS
         while (!queue.isEmpty()) {
             int size = queue.size(); // current level (minute)
 
