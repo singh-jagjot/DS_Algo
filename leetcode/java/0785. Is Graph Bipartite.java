@@ -2,11 +2,10 @@
 class Solution {
     public boolean isBipartite(int[][] graph) {
         int[] color = new int[graph.length]; // 0 = uncolored, 1/2 = partitions
+        Queue<Integer> queue = new ArrayDeque<>();
 
         for (int i = 0; i < graph.length; i++) {
             if (color[i] != 0) continue;
-
-            Queue<Integer> queue = new ArrayDeque<>();
             queue.offer(i);
             color[i] = 1;
 
