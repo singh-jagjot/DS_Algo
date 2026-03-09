@@ -13,69 +13,69 @@
  *     }
  * }
  */
+
+//Time Complexity: O(M)
+//Here, M is the number of overlapping nodes between the two trees.
+//Space Complexity: O(H)
 class Solution {
     public TreeNode mergeTrees(TreeNode root1, TreeNode root2) {
-        if(root1==null) return root2;
-        if(root2==null) return root1;
-        TreeNode root = new TreeNode(root1.val+root2.val);
-        root.left = mergeTrees(root1.left, root2.left);
-        root.right = mergeTrees(root1.right, root2.right);
-        return root;
+        // 1. If one node is null, return the other (covers all base cases)
+        if (root1 == null) return root2;
+        if (root2 == null) return root1;
+
+        // 2. Instead of 'new', reuse root1 to save memory (In-place)
+        root1.val += root2.val;
+
+        // 3. Recursively merge children
+        root1.left = mergeTrees(root1.left, root2.left);
+        root1.right = mergeTrees(root1.right, root2.right);
+
+        // 4. Return the modified root1
+        return root1;
     }
 }
 
-
-//Iterative
-
-/**
- * Definition for a binary tree node.
- * public class TreeNode {
- *     int val;
- *     TreeNode left;
- *     TreeNode right;
- *     TreeNode() {}
- *     TreeNode(int val) { this.val = val; }
- *     TreeNode(int val, TreeNode left, TreeNode right) {
- *         this.val = val;
- *         this.left = left;
- *         this.right = right;
- *     }
- * }
- */
+//Time Complexity: O(M)
+//Here, M is the number of overlapping nodes between the two trees.
+//Space Complexity: O(H)
+//Iterative using DFS
 class Solution {
     public TreeNode mergeTrees(TreeNode root1, TreeNode root2) {
-        if(root1==null) return root2;
-        Deque<TreeNode> stack1 = new LinkedList<>(); //Can't use ArrayDeque here as they don't allow null;
-        Deque<TreeNode> stack2 = new LinkedList<>(); //Can't use ArrayDeque here as they don't allow null;
+        if (root1 == null) return root2;
+        if (root2 == null) return root1;
 
-        stack1.push(root1);
-        stack2.push(root2);
+        // Now we can use ArrayDeque because we won't push nulls!(ArrayDeque don't allow null)
+        Deque<TreeNode> s1 = new ArrayDeque<>();
+        Deque<TreeNode> s2 = new ArrayDeque<>();
 
-        while (!stack1.isEmpty()) {
+        s1.push(root1);
+        s2.push(root2);
 
-            var node1 = stack1.pop();
-            var node2 = stack2.pop();
+        while (!s1.isEmpty()) {
+            TreeNode n1 = s1.pop();
+            TreeNode n2 = s2.pop();
 
-            if (node2 == null)
-                continue;
+            // Merge values
+            n1.val += n2.val;
 
-            node1.val = node1.val + node2.val;
-            if (node1.left == null) {
-                node1.left = node2.left;
-            } else {
-                stack1.push(node1.left);
-                stack2.push(node2.left);
+            // Handle Left
+            if (n1.left == null) {
+                n1.left = n2.left; // Grafting
+            } else if (n2.left != null) {
+                // Only push if BOTH are non-null
+                s1.push(n1.left);
+                s2.push(n2.left);
             }
 
-            if (node1.right == null) {
-                node1.right = node2.right;
-            } else {
-                stack1.push(node1.right);
-                stack2.push(node2.right);
+            // Handle Right
+            if (n1.right == null) {
+                n1.right = n2.right; // Grafting
+            } else if (n2.right != null) {
+                // Only push if BOTH are non-null
+                s1.push(n1.right);
+                s2.push(n2.right);
             }
-
         }
-
         return root1;
     }
 }
